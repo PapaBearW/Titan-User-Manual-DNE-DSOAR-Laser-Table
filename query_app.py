@@ -7,7 +7,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 
 PDF_FILES = {
-    "D-Soar Plus Fiber Laser Machine Manual": BASE_DIR / "DSoar-Manual.pdf",
+    "D-Soar Plus Fiber Laser Machine Manual": BASE_DIR / "DSoar-Manual-searchable.pdf",
     "CypCut User Manual": BASE_DIR / "CypCut-User-Manual.pdf",
 }
 CONTEXT_CHARS = 400   # characters of context shown around each match
