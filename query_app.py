@@ -5,8 +5,13 @@ from pathlib import Path
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 BASE_DIR = Path(__file__).parent
+
+# Find the D-Soar PDF by pattern (filename contains special characters)
+_dsoar_matches = list(BASE_DIR.glob("*D-Soar*.pdf")) or list(BASE_DIR.glob("*(CE)*.pdf"))
+_dsoar_path = _dsoar_matches[0] if _dsoar_matches else BASE_DIR / "D-Soar.pdf"
+
 PDF_FILES = {
-    "D-Soar Plus Fiber Laser Machine Manual": BASE_DIR / "D-Soar Plus G∕PG Fiber Laser Cutting Machine User Manual 250516.pdf",
+    "D-Soar Plus Fiber Laser Machine Manual": _dsoar_path,
     "CypCut User Manual": BASE_DIR / "CypCut-User-Manual.pdf",
 }
 CONTEXT_CHARS = 400   # characters of context shown around each match
