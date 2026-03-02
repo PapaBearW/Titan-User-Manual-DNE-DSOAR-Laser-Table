@@ -129,7 +129,7 @@ with st.sidebar:
 api_key = st.secrets.get("OPENAI_API_KEY", "")
 
 #  Tabs 
-tab_search, tab_ai = st.tabs([" Keyword Search", " Ask Titan (AI)"])
+tab_ai, tab_search = st.tabs([" Ask Titan (AI)", " Keyword Search"])
 
 #  Tab 1: Keyword Search 
 with tab_search:
