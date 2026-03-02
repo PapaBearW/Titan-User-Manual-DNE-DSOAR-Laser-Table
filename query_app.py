@@ -124,13 +124,9 @@ with st.sidebar:
     for name in PDF_FILES:
         st.markdown(f"- {name}")
     st.markdown("---")
-    st.markdown("**Ask Titan (AI):**")
-    api_key = st.text_input(
-        "OpenAI API Key",
-        type="password",
-        placeholder="sk-...",
-        help="Your key is never stored - it lives only in this browser session.",
-    )
+
+# Read API key from secrets (set in .streamlit/secrets.toml or Streamlit Cloud secrets)
+api_key = st.secrets.get("OPENAI_API_KEY", "")
 
 #  Tabs 
 tab_search, tab_ai = st.tabs([" Keyword Search", " Ask Titan (AI)"])
